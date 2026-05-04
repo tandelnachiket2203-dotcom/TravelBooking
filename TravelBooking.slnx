@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../../NZWalk/NZWalks/NZWalks.API/NZWalks.API.csproj" />
+  <Project Path="TravelBooking/TravelBooking.csproj" />
+</Solution>
