@@ -6,7 +6,7 @@
         public Guid UserId { get; set; }
         public Guid DestinationId { get; set; }
 
-        public DateTime BookingData { get; set; }
+        public DateTime BookingDate { get; set; }
 
         public DateTime TravelDate {  get; set; }
 
