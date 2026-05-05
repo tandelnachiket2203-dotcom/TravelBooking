@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TravelBooking.Models.DTO;
 using TravelBooking.Repository;
 
 namespace TravelBooking.Controllers
@@ -19,7 +20,18 @@ namespace TravelBooking.Controllers
         public async Task<IActionResult> GetAllDestinations()
         {
             var destination=await DestinationRepository.GetAllDestinations();
-            return Ok("This will return all destinations");
+            return Ok(destination);
+        }
+
+        [HttpPost]
+        [Route("AddDestination")]
+      
+        public async Task<IActionResult> AddDestination([FromBody] DestinationRequestDTO destinationRequest)
+        {
+
+            var addedDestination = await DestinationRepository.AddDestination(destinationRequest);
+
+            return Ok(addedDestination);
         }
     }
 }

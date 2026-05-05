@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyFirstDotNetProject\\TravelBooking\\TravelBooking\\TravelBooking\\TravelBooking.csproj": {}
+    "D:\\MyFirstDotNetProject\\TravelBooking\\TravellBooking-Git\\TravelBooking\\TravelBooking\\TravelBooking.csproj": {}
   },
   "projects": {
-    "D:\\MyFirstDotNetProject\\TravelBooking\\TravelBooking\\TravelBooking\\TravelBooking.csproj": {
+    "D:\\MyFirstDotNetProject\\TravelBooking\\TravellBooking-Git\\TravelBooking\\TravelBooking\\TravelBooking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyFirstDotNetProject\\TravelBooking\\TravelBooking\\TravelBooking\\TravelBooking.csproj",
+        "projectUniqueName": "D:\\MyFirstDotNetProject\\TravelBooking\\TravellBooking-Git\\TravelBooking\\TravelBooking\\TravelBooking.csproj",
         "projectName": "TravelBooking",
-        "projectPath": "D:\\MyFirstDotNetProject\\TravelBooking\\TravelBooking\\TravelBooking\\TravelBooking.csproj",
+        "projectPath": "D:\\MyFirstDotNetProject\\TravelBooking\\TravellBooking-Git\\TravelBooking\\TravelBooking\\TravelBooking.csproj",
         "packagesPath": "C:\\Users\\Nachi\\.nuget\\packages\\",
-        "outputPath": "D:\\MyFirstDotNetProject\\TravelBooking\\TravelBooking\\TravelBooking\\obj\\",
+        "outputPath": "D:\\MyFirstDotNetProject\\TravelBooking\\TravellBooking-Git\\TravelBooking\\TravelBooking\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,10 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[16.1.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[10.0.5, )"

@@ -13,6 +13,8 @@
 
         public decimal PricePerPerson { get; set; }
 
+        public int DurationInDays { get; set; }
+
         public int AvailableSlots { get; set; }
 
         public string ImageUrl { get; set; }

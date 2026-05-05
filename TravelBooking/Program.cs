@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TravelBooking.Data;
+using TravelBooking.Mapping;
 using TravelBooking.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,7 @@ builder.Services.AddDbContext<TravellBokkingDBContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("TravelBookingConnectionString")));
 
 builder.Services.AddScoped<IDestinationRepository, SQLDestinationRepository>();
+builder.Services.AddAutoMapper(cfg => cfg.AddProfile<AutoMapperProfile>());
 
 var app = builder.Build();
 
