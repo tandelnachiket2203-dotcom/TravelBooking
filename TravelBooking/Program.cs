@@ -11,8 +11,11 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddDbContext<TravellBokkingDBContext>(options => 
-options.UseSqlServer(builder.Configuration.GetConnectionString("TravelBookingConnectionString")));
+builder.Services.AddDbContext<TravellBokkingDBContext>(options =>
+    options.UseSqlite("Data Source=app.db"));
+
+// builder.Services.AddDbContext<TravellBokkingDBContext>(options => 
+// options.UseSqlServer(builder.Configuration.GetConnectionString("TravelBookingConnectionString")));
 
 builder.Services.AddScoped<IDestinationRepository, SQLDestinationRepository>();
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile<AutoMapperProfile>());

@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyFirstDotNetProject\\TravelBooking\\TravellBooking-Git\\TravelBooking\\TravelBooking\\TravelBooking.csproj": {}
+    "/Users/ocean07/Documents/Nachiket-Practice-Projects/TravelBooking-Git/TravelBooking/TravelBooking/TravelBooking.csproj": {}
   },
   "projects": {
-    "D:\\MyFirstDotNetProject\\TravelBooking\\TravellBooking-Git\\TravelBooking\\TravelBooking\\TravelBooking.csproj": {
+    "/Users/ocean07/Documents/Nachiket-Practice-Projects/TravelBooking-Git/TravelBooking/TravelBooking/TravelBooking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyFirstDotNetProject\\TravelBooking\\TravellBooking-Git\\TravelBooking\\TravelBooking\\TravelBooking.csproj",
+        "projectUniqueName": "/Users/ocean07/Documents/Nachiket-Practice-Projects/TravelBooking-Git/TravelBooking/TravelBooking/TravelBooking.csproj",
         "projectName": "TravelBooking",
-        "projectPath": "D:\\MyFirstDotNetProject\\TravelBooking\\TravellBooking-Git\\TravelBooking\\TravelBooking\\TravelBooking.csproj",
-        "packagesPath": "C:\\Users\\Nachi\\.nuget\\packages\\",
-        "outputPath": "D:\\MyFirstDotNetProject\\TravelBooking\\TravellBooking-Git\\TravelBooking\\TravelBooking\\obj\\",
+        "projectPath": "/Users/ocean07/Documents/Nachiket-Practice-Projects/TravelBooking-Git/TravelBooking/TravelBooking/TravelBooking.csproj",
+        "packagesPath": "/Users/ocean07/.nuget/packages/",
+        "outputPath": "/Users/ocean07/Documents/Nachiket-Practice-Projects/TravelBooking-Git/TravelBooking/TravelBooking/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Nachi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ocean07/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,6 +65,10 @@
               "target": "Package",
               "version": "[10.0.7, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[10.0.7, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -97,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.203/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

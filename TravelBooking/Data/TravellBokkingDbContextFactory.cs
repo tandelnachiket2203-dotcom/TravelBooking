@@ -87,11 +87,8 @@ namespace TravelBooking.Data
 
             
 
-            var connectionString = config.GetConnectionString("TravelBookingConnectionString")
-               ?? "Server=localhost;Database=TravelBookingDb;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True";
-
             var optionsBuilder = new DbContextOptionsBuilder<TravellBokkingDBContext>();
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlite("Data Source=app.db");
 
             return new TravellBokkingDBContext(optionsBuilder.Options);
         }
