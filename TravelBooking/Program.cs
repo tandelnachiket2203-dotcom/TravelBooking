@@ -1,7 +1,11 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using TravelBooking.Data;
 using TravelBooking.Mapping;
 using TravelBooking.Repository;
+using TravelBooking.Sevices;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,12 +16,31 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<TravellBokkingDBContext>(options =>
-    options.UseSqlite("Data Source=app.db"));
+    options.UseSqlite(builder.Configuration.GetConnectionString("TravelBookingConnectionString")));
+
+    builder.Services.AddScoped<JwtService>();
+    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(options =>
+        {
+            options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                ValidAudience = builder.Configuration["Jwt:Audience"],
+                IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+            };
+        });
+
+        builder.Services.AddAuthorization();
 
 // builder.Services.AddDbContext<TravellBokkingDBContext>(options => 
 // options.UseSqlServer(builder.Configuration.GetConnectionString("TravelBookingConnectionString")));
 
 builder.Services.AddScoped<IDestinationRepository, SQLDestinationRepository>();
+builder.Services.AddScoped<IAuthRepository, SQLAuthRepository>();
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile<AutoMapperProfile>());
 
 var app = builder.Build();

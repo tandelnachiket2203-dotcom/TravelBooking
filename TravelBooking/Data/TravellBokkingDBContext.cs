@@ -9,6 +9,7 @@ namespace TravelBooking.Data
             : base(dbContextOptions)
         {
         }
+        public DbSet<User> Users { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Destination> Destinations { get; set; }
 
