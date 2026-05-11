@@ -17,7 +17,7 @@ namespace TravelBooking.Controllers
 
         [HttpPost]
         [Route("register")]
-        public async Task<IActionResult> Register(UserRegisterDTO userRegisterDTO)
+        public async Task<IActionResult> Register([FromBody]UserRegisterDTO userRegisterDTO)
         {
             // Implement user registration logic here
            var userExists=await AuthRepository.UserExistsAsync(userRegisterDTO.Email);
@@ -32,9 +32,15 @@ namespace TravelBooking.Controllers
 
         [HttpPost]
         [Route("login")]
-        public async Task<IActionResult>Login(UserLoginDTO userLoginDTO)
+        public async Task<IActionResult>Login([FromBody]UserLoginDTO userLoginDTO)
         {
             // Implement user login logic here
+            bool userExists=await AuthRepository.UserExistsAsync(userLoginDTO.Email);
+            if(!userExists)            
+            {
+                return BadRequest(new { Message = "Invalid email or password" });
+            }
+            var loggedInUser=await AuthRepository.LoginUserAsync(userLoginDTO);
             return Ok(new { Message = "Login successful" });
         }
 

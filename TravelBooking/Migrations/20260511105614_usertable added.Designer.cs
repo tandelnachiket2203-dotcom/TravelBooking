@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TravelBooking.Data;
 
@@ -10,9 +11,11 @@ using TravelBooking.Data;
 namespace TravelBooking.Migrations
 {
     [DbContext(typeof(TravellBokkingDBContext))]
-    partial class TravellBokkingDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260511105614_usertable added")]
+    partial class usertableadded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.7");

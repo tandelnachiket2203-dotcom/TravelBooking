@@ -41,6 +41,7 @@ builder.Services.AddDbContext<TravellBokkingDBContext>(options =>
 
 builder.Services.AddScoped<IDestinationRepository, SQLDestinationRepository>();
 builder.Services.AddScoped<IAuthRepository, SQLAuthRepository>();
+builder.Services.AddScoped<IBookingRepository,SQLBookingRepository>();
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile<AutoMapperProfile>());
 
 var app = builder.Build();

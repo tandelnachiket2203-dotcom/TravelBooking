@@ -16,15 +16,16 @@ namespace TravelBooking.Repository
 
         public async Task<UserLoginDTO> LoginUserAsync(UserLoginDTO userLoginDTO)
         {
-    //         var user=await DbContext.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == userLoginDTO.Email.ToLower() && u.Password == userLoginDTO.Password);
-    //         if(user==null)
-    //         {
-    //             return null;
-    //         }
-    //   bool validPassword = BCrypt.Net.BCrypt.Verify(
-    //         userLoginDTO.Password,
-    //         user.Password
-    //     );       
+            var user=await DbContext.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == userLoginDTO.Email.ToLower() && u.Password == userLoginDTO.Password);
+            if(user==null)
+            {
+                return null;
+            }
+      bool validPassword = user.Password == userLoginDTO.Password;
+            if (!validPassword)
+            {
+                return null;
+            }   
     return userLoginDTO; 
         
         }
@@ -37,7 +38,10 @@ namespace TravelBooking.Repository
                 FristName=userRegisterDTO.FirstName,
                 LastName=userRegisterDTO.LastName,
                 Password=userRegisterDTO.Password,
-                Phone=userRegisterDTO.Phone
+                Phone=userRegisterDTO.Phone,
+                CreatedAt=DateTime.UtcNow,
+                LastUpdatedAt=DateTime.UtcNow
+            
             };
             DbContext.Users.Add(user);
             await DbContext.SaveChangesAsync();

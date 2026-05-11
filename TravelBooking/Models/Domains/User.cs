@@ -8,8 +8,8 @@
         public string Email { get; set; }
         public string Password { get; set; }
         public string Phone { get; set; }
-        public string Role { get; set; }
-        public bool isEmailVerified { get; set; }
+        public string Role { get; set; }="";
+        public bool isEmailVerified { get; set; }= false;
 
         public DateTime CreatedAt { get; set; }
         public DateTime LastUpdatedAt { get; set; }

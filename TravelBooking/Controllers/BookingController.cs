@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TravelBooking.Models.DTO;
+using TravelBooking.Repository;
 
 
 namespace TravelBooking.Controllers
@@ -9,13 +10,21 @@ namespace TravelBooking.Controllers
 [ApiController]
 public class BookingController : ControllerBase
     {
-        [HttpPost]
-        [Route("CreateBooking"  )]
-        public async Task<IActionResult> CreateBooking([FromBody]CreateBookingRequestDTO createBookingRequest)
+        public BookingController(IBookingRepository bookingRepository)
         {
-            return Ok();
+            BookingRepository = bookingRepository;
+        }
+
+        public IBookingRepository BookingRepository { get; }
+
+        [HttpPost]
+        [Route("CreateBooking/{userId}")]
+
+        public async Task<IActionResult> CreateBooking([FromBody]CreateBookingRequestDTO createBookingRequest,[FromHeader]Guid userId)
+        {
+            var booking = await BookingRepository.CreateBooking(userId, createBookingRequest);
+            return Ok(booking);
         }
         }
-    }
-    
 }
+    
