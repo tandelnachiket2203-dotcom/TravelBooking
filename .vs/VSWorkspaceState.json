@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\TravelBooking",
+    "\\TravelBooking\\Controllers",
+    "\\TravelBooking\\Models",
+    "\\TravelBooking\\Models\\Domains",
+    "\\TravelBooking\\Models\\DTO"
+  ],
+  "SelectedNode": "\\TravelBooking\\appsettings.Development.json",
+  "PreviewInSolutionExplorer": false
+}

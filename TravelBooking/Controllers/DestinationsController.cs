@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TravelBooking.Models.DTO;
 using TravelBooking.Repository;
@@ -17,6 +18,8 @@ namespace TravelBooking.Controllers
         public IDestinationRepository DestinationRepository { get; }
 
         [HttpGet]
+        [Authorize(Roles ="Reader")]
+
         public async Task<IActionResult> GetAllDestinations()
         {
             var destination=await DestinationRepository.GetAllDestinations();
@@ -25,7 +28,7 @@ namespace TravelBooking.Controllers
 
         [HttpPost]
         [Route("AddDestination")]
-      
+        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> AddDestination([FromBody] DestinationRequestDTO destinationRequest)
         {
 

@@ -318,3 +318,6 @@ D:\MyFirstDotNetProject\TravelBooking\TravellBooking-Git\TravelBooking\TravelBoo
 D:\MyFirstDotNetProject\TravelBooking\TravellBooking-Git\TravelBooking\TravelBooking\obj\Debug\net10.0\TravelBo.8AD9FED8.Up2Date
 D:\MyFirstDotNetProject\TravelBooking\TravellBooking-Git\TravelBooking\TravelBooking\obj\Debug\net10.0\TravelBooking.genruntimeconfig.cache
 D:\MyFirstDotNetProject\TravelBooking\TravellBooking-Git\TravelBooking\TravelBooking\obj\Debug\net10.0\ref\TravelBooking.dll
+D:\MyFirstDotNetProject\TravelBooking\TravellBooking-Git\TravelBooking\TravelBooking\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\MyFirstDotNetProject\TravelBooking\TravellBooking-Git\TravelBooking\TravelBooking\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\MyFirstDotNetProject\TravelBooking\TravellBooking-Git\TravelBooking\TravelBooking\bin\Debug\net10.0\Microsoft.AspNet.Identity.Core.dll
